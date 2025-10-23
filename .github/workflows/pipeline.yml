@@ -58,8 +58,8 @@ jobs:
       uses: zaproxy/action-baseline@v0.6.1
       with:
         target: 'http://localhost:5000'
-        format: html
-        output: zap-report.html
+        docker_name: 'ghcr.io/zaproxy/zap2docker-stable'
+        cmd_options: '-t http://localhost:5000 -r zap-report.html'
 
     - name: Run Nikto Scan
       run: |
