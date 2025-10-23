@@ -61,6 +61,7 @@ jobs:
         docker_name: 'zaproxy/zap-weekly'
         cmd_options: '-t http://localhost:5000 -r zap-report.html'
         fail_action: false
+        allow_issue_writing: false
 
     - name: Run Nikto Scan
       run: |
