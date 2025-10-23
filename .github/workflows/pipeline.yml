@@ -63,6 +63,18 @@ jobs:
         fail_action: false
         allow_issue_writing: false
 
+    - name: Move ZAP report to workspace
+      if: always()
+      run: |
+        echo "Checking for ZAP report..."
+        if [ -f report_html.html ]; then
+          mv report_html.html zap-report.html
+        elif [ -f /zap/wrk/report_html.html ]; then
+          mv /zap/wrk/report_html.html zap-report.html
+        else
+          echo "ZAP report not found. Skipping rename."
+        fi
+
     - name: Run Nikto Scan
       run: |
         sudo apt-get update
