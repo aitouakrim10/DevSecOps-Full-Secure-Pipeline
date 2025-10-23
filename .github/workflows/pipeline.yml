@@ -60,7 +60,7 @@ jobs:
         target: 'http://localhost:5000'
         docker_name: 'owasp/zap2docker-weekly'
         cmd_options: '-t http://localhost:5000 -r zap-report.html'
-      fail_action: false
+        fail_action: false
 
     - name: Run Nikto Scan
       run: |
