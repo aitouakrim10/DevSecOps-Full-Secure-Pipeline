@@ -57,7 +57,7 @@ jobs:
     - name: Run OWASP ZAP Baseline Scan
       run: |
         docker run --rm -v $(pwd):/zap/wrk:rw zaproxy/zap-weekly \
-          zap-baseline.py -t http://localhost:5000 -a
+          zap-baseline.py -t http://devsecops-app:5000 -a
 
     - name: Stop containers
       run: docker compose down
