@@ -72,9 +72,9 @@ jobs:
       run: docker compose down
 
     - name: Upload Security and Test Reports
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
-        name: reports
+        name: security-reports
         path: |
           lint-report.txt
           tests-report.xml
@@ -82,4 +82,3 @@ jobs:
           trivy-report.json
           zap-report.html
           nikto-report.html
-          app/tests/__pycache__
