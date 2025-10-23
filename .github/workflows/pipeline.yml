@@ -55,10 +55,10 @@ jobs:
         curl -f http://localhost:8000/metrics
 
     - name: Run OWASP ZAP Baseline Scan
-      uses: zaproxy/action-baseline@v0.6.1 
+      uses: zaproxy/action-baseline@v0.6.1
       with:
         target: 'http://localhost:5000'
-        docker_name: 'owasp/zap2docker-weekly'
+        docker_name: 'zaproxy/zap-weekly'
         cmd_options: '-t http://localhost:5000 -r zap-report.html'
         fail_action: false
 
