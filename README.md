@@ -31,11 +31,11 @@ A Flask application demonstrating a complete DevSecOps pipeline with monitoring 
 ![Grafana Dashboard](images/grafana.png)
 *Real-time monitoring of application metrics*
 
-## 🛠️ Quick Start
+##  Quick Start
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
+git clone git@github.com:aitouakrim10/DevSecOps-Full-Secure-Pipeline.git
 cd devsecops
 ```
 
@@ -71,6 +71,9 @@ The project includes various security checks:
 ├── app
 │   ├── app.py
 │   └── requirement.txt
+│   └── tests
+│       ├── __init__.py
+│       └── test_app.py
 ├── Dockerfile
 ├── docker-compose.yml
 ├── prometheus
