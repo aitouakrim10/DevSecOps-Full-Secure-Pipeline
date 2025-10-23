@@ -59,7 +59,7 @@ jobs:
       with:
         target: 'http://localhost:5000'
         docker_name: 'zaproxy/zap-weekly'
-        cmd_options: '-t http://localhost:5000 -r zap-report.html'
+        cmd_options: '-t http://localhost:5000 -r report_html.html'
         fail_action: false
         allow_issue_writing: false
 
@@ -81,5 +81,5 @@ jobs:
           tests-report.xml
           semgrep-report.json
           trivy-report.json
-          zap-report.html
+          report_html.html
           nikto-report.html
