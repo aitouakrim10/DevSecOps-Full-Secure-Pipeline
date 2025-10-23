@@ -5,7 +5,7 @@ FROM python:3.11-slim
 WORKDIR /app
 COPY app/ .
 # i install dependencies
-RUN pip install --no-cache-dir -r requirement.txt
+RUN pip install --no-cache-dir -r requirements.txt
 # Now I execute the application
 EXPOSE 5000 8000
 
