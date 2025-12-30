@@ -62,7 +62,12 @@ jobs:
 
     - name: Run OWASP ZAP Baseline Scan
       run: |
-        echo "i need to fix this error :  [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused"
+        docker run --rm --network host \
+          -v $(pwd):/zap/wrk:rw \
+          ghcr.io/zaproxy/zaproxy:stable \
+          zap-baseline.py -t http://localhost:5000 \
+          -r zap-report.html \
+          -J zap-report.json || true
 
     - name: Stop containers
       run: docker compose down
@@ -77,3 +82,5 @@ jobs:
           semgrep-report.json
           trivy-report.json
           nikto-report.html
+          zap-report.html
+          zap-report.json
